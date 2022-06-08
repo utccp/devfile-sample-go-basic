@@ -14,5 +14,9 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
+        if len(r.URL.Path[1:]) == 0 {
+                fmt.Fprintf(w, "Hello, Uccps!")
+        }else{
+                fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
+        }
 }
